@@ -106,34 +106,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo高级用法 使用 Travis CI 自动部署 Hexo 博客">
 <meta property="og:url" content="http://yoursite.com/2016/05/08/hexo/使用Travis CI自动部署Hexo博客/index.html">
-<meta property="og:site_name" content="Liu Xian Dong &#39;Blog">
+<meta property="og:site_name" content="Liu Xian Dong&#39;Blog">
 <meta property="og:description" content="使用 Travis CI 自动部署 Hexo 博客CI 持续集成 持续集成：Continuous Integration，简称CI，意思是，在一个项目中，任何人对代码库的任何改动，都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-0.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-1.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-2.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-3.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-4.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-6.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-7.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-8.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-9.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-10.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-11.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-12.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-13.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-14.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_1-15.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_2-1.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_2-2.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_2-3.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_2-4.png">
-<meta property="og:image" content="http://yoursite.com/image/travis_2-5.png">
-<meta property="og:updated_time" content="2017-09-08T15:01:56.660Z">
+<meta property="og:updated_time" content="2017-09-09T12:52:05.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo高级用法 使用 Travis CI 自动部署 Hexo 博客">
 <meta name="twitter:description" content="使用 Travis CI 自动部署 Hexo 博客CI 持续集成 持续集成：Continuous Integration，简称CI，意思是，在一个项目中，任何人对代码库的任何改动，都会触发CI服务器自动对项目进行构建，自动运行测试，甚至自动部署到测试环境。">
-<meta name="twitter:image" content="http://yoursite.com/image/travis_1-0.png">
 
 
 
@@ -167,7 +146,7 @@
 
 
 
-  <title>hexo高级用法 使用 Travis CI 自动部署 Hexo 博客 | Liu Xian Dong 'Blog</title>
+  <title>hexo高级用法 使用 Travis CI 自动部署 Hexo 博客 | Liu Xian Dong'Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +199,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Liu Xian Dong 'Blog</span>
+        <span class="site-title">Liu Xian Dong'Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -356,7 +335,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Liu Xian Dong 'Blog">
+      <meta itemprop="name" content="Liu Xian Dong'Blog">
     </span>
 
     
@@ -509,9 +488,12 @@
 </ul>
 </blockquote>
 <h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li>登陆<a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI (https://travis-ci.org/)</a>与Github进行关联<br><img src="/image/travis_1-0.png" alt="image"><br><img src="/image/travis_1-1.png" alt="image"></li>
-<li>授权 Travis ，托管需要自动部署的仓库<br><img src="/image/travis_1-2.png" alt="image"><br><img src="/image/travis_1-3.png" alt="image"></li>
-<li>设置选项<br><img src="/image/travis_1-4.png" alt="image"><blockquote>
+<li>登陆<a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI (https://travis-ci.org/)</a>与Github进行关联<!--![image](/image/travis_1-0.png)-->
+<!--![image](/image/travis_1-1.png)--></li>
+<li>授权 Travis ，托管需要自动部署的仓库<!--![image](/image/travis_1-2.png)-->
+<!--![image](/image/travis_1-3.png)--></li>
+<li>设置选项<!--![image](/image/travis_1-4.png)-->
+<blockquote>
 <p>此时，Travis 已经接管你Github这个仓库里的代码了，一旦线上仓库有变动，Travis就会自动进行构建部署。</p>
 </blockquote>
 </li>
@@ -526,24 +508,30 @@
 <ol>
 <li><p>在 Github 生成密钥</p>
 <ol>
-<li>进入 Github 设置<br><img src="/image/travis_1-6.png" alt="image"></li>
-<li>点击 Personal access tokens<br><img src="/image/travis_1-7.png" alt="image"></li>
-<li>新建一个新安全令牌<br><img src="/image/travis_1-8.png" alt="image"></li>
-<li>写上令牌名称，勾选下面所有选项，除了delete_repo<br><img src="/image/travis_1-9.png" alt="image"></li>
-<li>点击复制生成的密钥<br><img src="/image/travis_1-10.png" alt="image"></li>
+<li>进入 Github 设置<!--![image](/image/travis_1-6.png)--></li>
+<li>点击 Personal access tokens<!--![image](/image/travis_1-7.png)--></li>
+<li>新建一个新安全令牌<!--![image](/image/travis_1-8.png)--></li>
+<li>写上令牌名称，勾选下面所有选项，除了delete_repo<!--![image](/image/travis_1-9.png)--></li>
+<li>点击复制生成的密钥<!--![image](/image/travis_1-10.png)--></li>
 <li>回到 Travis 设置选项中，填写密钥<blockquote>
-<p>注意 key 写 GH_TOKEN ，复制密钥，点击 Add<br><img src="/image/travis_1-11.png" alt="image"></p>
-</blockquote>
+<p>注意 key 写 GH_TOKEN ，复制密钥，点击 Add</p>
+<!--![image](/image/travis_1-11.png)--></blockquote>
 </li>
-<li>最后添加的结果<br><img src="/image/travis_1-12.png" alt="image"></li>
+<li>最后添加的结果<!--![image](/image/travis_1-12.png)-->
+</li>
 </ol>
 </li>
-<li><p>本地配置 .travis.yml 文件<br>在博客根目录创建一个名为 .travis.yml 的文件<br><img src="/image/travis_1-13.png" alt="image"><br>内容如下：</p>
+<li><p>本地配置 .travis.yml 文件<br>在博客根目录创建一个名为 .travis.yml 的文件</p>
+<!--![image](/image/travis_1-13.png)-->
+<p>内容如下：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> <span class="string">node_js</span></div><div class="line"><span class="attr">node_js:</span> <span class="string">stable</span></div><div class="line"></div><div class="line"><span class="comment"># S: Build Lifecycle</span></div><div class="line"><span class="attr">install:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">npm</span> <span class="string">i</span></div><div class="line"></div><div class="line"><span class="attr">cache:</span></div><div class="line"><span class="attr">  directories:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">"node_modules"</span></div><div class="line"></div><div class="line"><span class="comment">#before_script:</span></div><div class="line"> <span class="comment"># - npm install -g gulp</span></div><div class="line"></div><div class="line"><span class="attr">script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo</span> <span class="string">g</span></div><div class="line"></div><div class="line"><span class="attr">after_script:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">cd</span> <span class="string">./public</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">init</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="string">user.name</span> <span class="string">"YourUserName"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">config</span> <span class="string">user.email</span> <span class="string">"YourEmail@gmail.com"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">add</span> <span class="string">.</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">commit</span> <span class="bullet">-m</span> <span class="string">"Update docs"</span></div><div class="line"><span class="bullet">  -</span> <span class="string">git</span> <span class="string">push</span> <span class="bullet">--force</span> <span class="bullet">--quiet</span> <span class="string">"https://$&#123;GH_TOKEN&#125;@$&#123;GH_REF&#125;"</span> <span class="attr">master:master</span></div><div class="line"><span class="comment"># E: Build LifeCycle</span></div><div class="line"></div><div class="line"><span class="attr">branches:</span></div><div class="line"><span class="comment"># your branches</span></div><div class="line"><span class="attr">  only:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">hexo</span></div><div class="line"></div><div class="line"><span class="attr">env:</span></div><div class="line"><span class="attr"> global:</span></div><div class="line"><span class="attr">   - GH_REF:</span> <span class="string">github.com/YouName/YouName.github.io.git</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>修改user.name、user.email、GH_REF</p>
 <blockquote>
-<p>user.name：   你 Github 的 用户名<br>user.email：  你 Github 的 Email<br><img src="/image/travis_1-14.png" alt="image"><br>GH_REF：    你 GitHub io仓库的地址<br><img src="/image/travis_1-15.png" alt="image"></p>
+<p>user.name：   你 Github 的 用户名<br>user.email：  你 Github 的 Email</p>
+<!--![image](/image/travis_1-14.png)-->
+<p>GH_REF：    你 GitHub io仓库的地址</p>
+<!--![image](/image/travis_1-15.png)-->
 </blockquote>
 </li>
 <li><p>更新代码到 Github 仓库的 hexo 分支</p>
@@ -551,11 +539,10 @@
 <li>进入 /hexo/themes/next 文件夹，删除 .git 文件夹，否则会导致 主git无法管理主题文件</li>
 <li><p>在 hexo 根目录初始化一个新仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure>
-<p><img src="/image/travis_2-1.png" alt="image"></p>
-</li>
+<!--![image](/image/travis_2-1.png)--></li>
 <li><p>切换到 hexo 分支</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b hexo</div></pre></td></tr></table></figure>
-<p><img src="/image/travis_2-2.png" alt="image">    </p>
+<!--![image](/image/travis_2-2.png)    -->
 <blockquote>
 <p>提交代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b hexo</div><div class="line">$ git add .</div><div class="line">$ git commit -m &apos;first commit&apos;</div><div class="line">$ git push git@github.com:YourName/YourName.github.io.git hexo</div></pre></td></tr></table></figure>
@@ -563,19 +550,21 @@
 </li>
 </ol>
 </li>
-<li><p>等待 Travis 构建完成<br><img src="/image/travis_2-3.png" alt="image"></p>
+<li><p>等待 Travis 构建完成</p>
+<!--![image](/image/travis_2-3.png)-->
 </li>
-<li><p>成功构建完成的结果<br><img src="/image/travis_2-4.png" alt="image">    </p>
-</li>
+<li><p>成功构建完成的结果</p>
+<!--![image](/image/travis_2-4.png)    -->
+<!--![image](/image/travis_2-5.png)    --></li>
 </ol>
 <ul>
-<li><p>完成后，我们进入 YourName.github.io 搂一眼结果</p>
-<blockquote>
-<p>Oye!It’s working！<br>  <img src="/image/travis_2-5.png" alt="image">    </p>
+<li>完成后，我们进入 YourName.github.io 搂一眼结果<blockquote>
+<p>Oye!It’s working！</p>
 </blockquote>
 </li>
-<li><p>下次更新的时候，直接往 Github 的 io仓库 hexo 分支中提交代码就行了</p>
-</li>
+</ul>
+<ul>
+<li>下次更新的时候，直接往 Github 的 io仓库 hexo 分支中提交代码就行了</li>
 </ul>
 
       
@@ -711,7 +700,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -722,7 +711,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -741,15 +730,6 @@
                     <i class="fa fa-fw fa-github"></i>
                   
                   GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://juejin.im/user/59a8ae466fb9a0247c6ef76d" target="_blank" title="掘金">
-                  
-                    <i class="fa fa-fw fa-group"></i>
-                  
-                  掘金
                 </a>
               </span>
             
