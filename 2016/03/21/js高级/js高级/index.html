@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+  .pace .pace-progress {
+    background: #ffffb3  ; /*进度条颜色*/
+    height: 3px;
+  }
+  .pace .pace-progress-inner {
+    box-shadow: 0 0 10px #ffffb3  0 0 5px #ffffb3 /*阴影颜色*/
+  }
+  .pace .pace-activity {
+    border-top-color: #ffffb3    /*上边框颜色*/
+    border-left-color: #ffffb3     /*左边框颜色*/
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js高级," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="事件委托使用事件委托技术能让你在工作避免对特定的每个节点添加事件监听器;相反,事件监听器是被添加到它们的父元素上.事件监听器会分析从子元素冒泡上来的事件,找到是哪个子元素的事件.假设,当每个子元素被点击时,将会有各自不同的事件发生.你可以给每个独立的li元素添加事件监听器,但有时这些li元素可能会被删除,可能会有新增,监听它们的新增或删除事件将会是一场噩梦,尤其是当你的监听事件的代码放在应用的另一">
+<meta name="keywords" content="js高级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js高级">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/js高级/js高级/index.html">
+<meta property="og:site_name" content="Liu Xian Dong &#39;Blog">
+<meta property="og:description" content="事件委托使用事件委托技术能让你在工作避免对特定的每个节点添加事件监听器;相反,事件监听器是被添加到它们的父元素上.事件监听器会分析从子元素冒泡上来的事件,找到是哪个子元素的事件.假设,当每个子元素被点击时,将会有各自不同的事件发生.你可以给每个独立的li元素添加事件监听器,但有时这些li元素可能会被删除,可能会有新增,监听它们的新增或删除事件将会是一场噩梦,尤其是当你的监听事件的代码放在应用的另一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-08T14:38:25.460Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js高级">
+<meta name="twitter:description" content="事件委托使用事件委托技术能让你在工作避免对特定的每个节点添加事件监听器;相反,事件监听器是被添加到它们的父元素上.事件监听器会分析从子元素冒泡上来的事件,找到是哪个子元素的事件.假设,当每个子元素被点击时,将会有各自不同的事件发生.你可以给每个独立的li元素添加事件监听器,但有时这些li元素可能会被删除,可能会有新增,监听它们的新增或删除事件将会是一场噩梦,尤其是当你的监听事件的代码放在应用的另一">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/21/js高级/js高级/"/>
+
+
+
+
+
+  <title>js高级 | Liu Xian Dong 'Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71ddec12fb1172387f0bd6399e834274";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+ 
+  <div class="bg_content">
+    <div class="filter"></div>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+       <a href="https://github.com/json1204"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Liu Xian Dong 'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Go Go</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br />
+            
+            相片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/21/js高级/js高级/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu Xian Dong 'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js高级</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-21T10:40:06+08:00">
+                2016-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js高级/" itemprop="url" rel="index">
+                    <span itemprop="name">js高级</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/03/21/js高级/js高级/" class="leancloud_visitors" data-flag-title="js高级">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2,911
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1><p>使用事件委托技术能让你在工作避免对特定的每个节点添加事件监听器;相反,事件监听器是被添加到它们的父元素上.事件监听器会分析从子元素冒泡上来的事件,找到是哪个子元素的事件.假设,当每个子元素被点击时,将会有各自不同的事件发生.你可以给每个独立的li元素添加事件监听器,但有时这些li元素可能会被删除,可能会有新增,监听它们的新增或删除事件将会是一场噩梦,尤其是当你的监听事件的代码放在应用的另一个地方时.此时采用事件委托的方式的话,当子元素的事件冒泡到父 ul 元素时,你可以检查事件对象的 target 属性或是类名,捕获真正被点击的节点元素的引用.</p>
+<figure class="highlight plain"><figcaption><span>&#39;#remove&#39;, remove)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#tbody&apos;).on(&apos;click&apos;, &apos;#remove&apos;, remove)</div></pre></td></tr></table></figure>
+<h1 id="前端的操作不当导致内存泄漏"><a href="#前端的操作不当导致内存泄漏" class="headerlink" title="前端的操作不当导致内存泄漏"></a>前端的操作不当导致内存泄漏</h1><ul>
+<li>所谓的内存泄露,就是在您不再拥有或需要它的时候仍然存在垃圾回收机制会定期扫描对象,并计算引用了每个对象的其他对象的数量.如果一个对象的没有被其他对象引用过,或对该对象的唯一引用是循环的,那么该对象内存即可回收</li>
+</ul>
+<ol>
+<li>内存泄露是指一块被分配的内存既不能使用,又不能回收,直到浏览器进程结束,由于浏览器垃圾回收方法有 bug,会产生内存泄露.</li>
+<li>当页面中元素被移除或替换时,若元素绑定的事件仍没被移除,在 IE 中不会作出恰当处理,此时要先手工移除事件,不然会存在内存泄露.</li>
+<li>在闭包中引入闭包外部的变量时,当闭包结束时此对象无法被垃圾回收(GC).</li>
+<li>Delete 一个 Object 的属性,而还有其他变量保持这个属性的引用.</li>
+<li>setTimeout 的第一个参数使用字符串而非函数的话,会引发内存泄露</li>
+<li>闭包</li>
+<li>控制台日志</li>
+<li>循环(在两个对象彼此引用且彼此保留时,就会产生一个循环)<a id="more"></a>
+<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1></li>
+</ol>
+<ul>
+<li>简单的理解是函数的嵌套形成闭包,闭包包括函数本身以及它的外部作用域,函数 a 内嵌套 b,且返回 b,当调用函数 a 时,用变量接收函数 b,就形成了闭包</li>
+<li>(这里还可以扩展一下作用域和作用域链的问题,js 只有全局作用域、函数作用域,没有块级作用域{}(在es6中是有块级作用域的如let),作用域链的查找方式,由内向外查找,函数作用域内的变量,全局不能直接访问,要想访问,就要用闭包….)</li>
+</ul>
+<p><strong>优点:</strong></p>
+<ul>
+<li>使用闭包可以形成独立的空间,缓存数据,延长变量的生命周期(如for循环里有异步操作的时候)</li>
+</ul>
+<p><strong>缺点:</strong></p>
+<ul>
+<li>延长了作用域链,需要释放的变量不能及时释放,可能引发内存泄漏(这里又能扩展,内存泄漏也称作”存储渗漏”,用动态存储分配函数动态开辟的空间,在使用完毕后未释放,结果导致一直占据该内存单元.直到程序结束.(其实说白了就是该内存空间使用完毕之后未回收)即所谓内存泄漏.内存泄漏形象的比喻是”操作系统可提供给所有进程的存储空间正在被某个进程榨干”,最终结果是程序运行时间越长,占用存储空间越来越多,最终用尽全部存储空间,整个系统崩溃.)</li>
+</ul>
+<h1 id="JavaScript-原型-原型链"><a href="#JavaScript-原型-原型链" class="headerlink" title="JavaScript 原型,原型链"></a>JavaScript 原型,原型链</h1><ol>
+<li>原型对象也是普通的对象,是实例对象一个自带隐式的 <strong>proto</strong> 属性,原型也有可能有自己的原型,也可以通过<strong>proto</strong>属性访问上一级原型，如果一个原型对象的原型不为 null 的话,我们就称之为原型链</li>
+</ol>
+<ol>
+<li>原型链是由一些用来继承和共享属性的对象组成的(有限的)对象链(基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法)</li>
+</ol>
+<p><strong>理解:</strong></p>
+<ul>
+<li>每个构造函数都有一个原型对象,原型对象都包含一个指向构造函数的指针,而实例都包含一个指向原型对象的内部指针.那么,假如我们让原型对象等于另一个类型的实例,结果会怎么样呢?显然,此时的原型对象将包含一个指向另一个原型的指针,相应地,另一个原型中也包含着一个指向另一个构造函数的指针.假如另一个原型又是另一个类型的实例,那么上述关系依然成立,如此层层递进,就构成了实 例与原型的链条.这就是所谓原型链的基本概念</li>
+</ul>
+<p><strong>最终</strong>：当我们需要一个属性的时,JavaScript 引擎会先看当前对象中是否有这个属性,如果没有的话,就会查找他的<br>Prototype 对象是否有这个属性（原型链的下级可以访问上级的作用域的变量；上一级不能访问下一级的作用域的变量这也是闭包的原理）</p>
+<h1 id="javascript中的this"><a href="#javascript中的this" class="headerlink" title="javascript中的this"></a>javascript中的this</h1><ul>
+<li><p>在 JavaScript 中,this 通常指向的是我们正在执行的函数本身,或者是,指向该函数所属的对象.</p>
+<ol>
+<li>普通函数中 this 是 window</li>
+<li>构造函数中 this 是当前的实例对象</li>
+<li>对象中的 this 是指向其本身</li>
+<li>原型对象的方法中 this 是当前的实例对象</li>
+<li>计时器中 this 是 window</li>
+<li>事件处理函数,this 是触发该事件的对象</li>
+</ol>
+</li>
+<li><p><strong>还可以通过call和apply改变this的指向</strong></p>
+<p>call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的,换句话说,就是为了改变函数体内部 this 的<br>指向.因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念.<br>二者的作用完全一样,只是接受参数的方式不太一样,参数 1 是 this ,call 需要把参数按顺序传递进去,而 apply 则是把参数<br>放在数组里从,然后依次传入方法中,若第一个参数为 null 那么函数中的 this 指向 window<br>Bind 也可以改变当前 this 指向;返回的是个函数.</p>
+</li>
+</ul>
+<h1 id="js中new-操作符"><a href="#js中new-操作符" class="headerlink" title="js中new 操作符"></a>js中new 操作符</h1><ol>
+<li>创建一个空对象,并且将 this 变量引向该对象,同时继承该对象的原型</li>
+<li>属性和方法被加入到 this 引用的对象中</li>
+<li>新创建的对象由 this 引用,并且最后隐式的返回 this</li>
+</ol>
+<h1 id="eval函数"><a href="#eval函数" class="headerlink" title="eval函数"></a>eval函数</h1><ol>
+<li>它的功能是把对应的字符串解析成 JS 代码并运行</li>
+<li>应该避免使用 eval,不安全,非常耗性能(2 次,一次解析成 js 语句,一次执行)</li>
+</ol>
+<h1 id="JS-中的递归函数"><a href="#JS-中的递归函数" class="headerlink" title="JS 中的递归函数"></a>JS 中的递归函数</h1><ul>
+<li><p>递归即是程序在执行过程中不断调用自身的编程技巧,当然也必须要有一个明确的结束条件, 不然就会陷入死循环.在函数中调用函数尽量使用arguments.calle</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function test(a)&#123;</div><div class="line">    arguments.callee()</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h1 id="前端开发的优化使页面加载快"><a href="#前端开发的优化使页面加载快" class="headerlink" title="前端开发的优化使页面加载快"></a>前端开发的优化使页面加载快</h1><ol>
+<li><p>减少 http 请求次数:CSS Sprites, JS、CSS 源码压缩、图片大小控制合适;网页 Gzip,CDN 托管,data 浏览器缓存（如angular.js） ,图片服务器.前端模板 JS+数据,减少由于 HTML 标签导致的带宽浪费,前端用变量保存 AJAX 请求结果,每次操作本地变量,不用请求,减少请求次数</p>
+</li>
+<li><p>用 innerHTML 代替 DOM 操作,减少 DOM 操作次数,优化 javascript 性能.</p>
+</li>
+<li><p>当需要设置的样式很多时设置 className 而不是直接操作 style.</p>
+</li>
+<li><p>少用全局变量、缓存 DOM 节点查找的结果.减少 IO 读取操作.</p>
+</li>
+<li><p>避免使用 CSS Expression(css 表达式)又称 Dynamic properties(动态属性).</p>
+</li>
+<li><p>图片预加载,将样式表放在顶部,将脚本放在底部 加上时间戳.</p>
+</li>
+<li><p>避免在页面的主体布局中使用 table,table 要等其中的内容完全下载之后才会显示出来,显示比 div+css 布局慢.</p>
+<p>​</p>
+</li>
+</ol>
+<h1 id="日常原生js的封装功能"><a href="#日常原生js的封装功能" class="headerlink" title="日常原生js的封装功能"></a>日常原生js的封装功能</h1><ul>
+<li><p>轮播图、放大镜、瀑布流、旋转木马、框架封装工具类等</p>
+</li>
+<li><p>缺点：自己封装耗时，一些使用原生 JS 实现的功能,虽然运行效率高,但通常需要考虑的是浏览器兼容性问题,还有一些隐藏的 BUG</p>
+</li>
+</ul>
+<h1 id="JSON与xml"><a href="#JSON与xml" class="headerlink" title="JSON与xml"></a>JSON与xml</h1><ul>
+<li>JSON 指的是 JavaScript 对象表示法(JavaScript Object Notation)</li>
+</ul>
+<ol>
+<li>轻量级数据交互格式</li>
+<li>可以形成复杂的嵌套格式</li>
+<li>解析非常方便</li>
+<li>易于读写,占用带宽小</li>
+<li>描述复杂结构能力较弱</li>
+<li>JavaScript、PHP等原生支持，简化了读取解析。成为当前互联网时代普遍应用的数据结构。</li>
+</ol>
+<ul>
+<li>JSON 的表现形式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.var arrJson = [&#123;&quot;name&quot;:&quot;xiaoming&quot;,&quot;age&quot;: 18&#125;,&#123;&quot;name&quot;:&quot;xiaohong&quot;,&quot;age&quot;: 19&#125;];</div><div class="line"></div><div class="line">2.var strJson = &#123;&quot;name&quot;:&quot;Lily&quot;,&quot;age&quot;: 12&#125;;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>xml</strong></li>
+</ul>
+<ol>
+<li>应用广泛，可扩展性强，被广泛应用各种场合</li>
+<li>读取、解析没有JSON快</li>
+<li>可读性强，可描述复杂结构</li>
+</ol>
+<h1 id="JS-模块化开发"><a href="#JS-模块化开发" class="headerlink" title="JS 模块化开发"></a>JS 模块化开发</h1><ul>
+<li><p>所谓的模块( 在业内, 模块, 组件等概念还很模糊) , 在代码中按照特定的方式对代码进行分解(解耦).分解后代码按照功能零件的形式存在. 如果按照某种逻辑将其组合在一起, 这个时候这个整体可以称之为一个模块.</p>
+<ol>
+<li><p>模块化中的<strong>模块</strong>一般指的是 Javascript 模块,比如一个用来格式化时间的模块</p>
+</li>
+<li><p><strong>组件</strong>则包含了 template、style 和 script，而它的 Script 可以由各种模块组成。比如一个显示时间的组件会调用面的那个格式化时间的模块</p>
+</li>
+<li><p>组件化就是做一个知乎，把导航栏拆成一个组件，一个一个回答区域拆成一个组件，编辑区是一个组件，页脚是一个组件，等等。。你可以尽情拆分。一个组件包含了html、css、js代码，可以简单理解为页面的一块。 组件化就是做一个知乎，把导航栏拆成一个组件，一个一个回答区域拆成一个组件，编辑区是一个组件，页脚是一个组件，等等。。你可以尽情拆分。一个组件包含了html、css、js代码，可以简单理解为页面的一块。模块化就是做一个知乎的编辑区组件，假设要有时间格式化、图片格式处理、视频格式处理、代码格式处理，这样很多个js功能。那么当然可以在HTML里面引入多个JS script，现在更流行更好的方式，是采用引入的方式。比如在一个编辑区组件里面，引入别人写好的时间格式化和图片格式处理的js代码：</p>
+</li>
+<li><p>模块化管理工具:requirejs,seajs</p>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js高级/" rel="tag"># js高级</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/11/html+css/瀑布流布局/" rel="next" title="瀑布流">
+                <i class="fa fa-chevron-left"></i> 瀑布流
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/15/hexo/使用Hexo+GitHub搭建博客/" rel="prev" title="使用 Hexo+Github 搭建博客">
+                使用 Hexo+Github 搭建博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Dong" />
+          <p class="site-author-name" itemprop="name">Dong</p>
+           
+              <p class="site-description motion-element" itemprop="description">To Better</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/json1204," target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/59a8ae466fb9a0247c6ef76d" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-group"></i>
+                  
+                  掘金
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件委托"><span class="nav-number">1.</span> <span class="nav-text">事件委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端的操作不当导致内存泄漏"><span class="nav-number">2.</span> <span class="nav-text">前端的操作不当导致内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">3.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-原型-原型链"><span class="nav-number">4.</span> <span class="nav-text">JavaScript 原型,原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#javascript中的this"><span class="nav-number">5.</span> <span class="nav-text">javascript中的this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js中new-操作符"><span class="nav-number">6.</span> <span class="nav-text">js中new 操作符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eval函数"><span class="nav-number">7.</span> <span class="nav-text">eval函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS-中的递归函数"><span class="nav-number">8.</span> <span class="nav-text">JS 中的递归函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端开发的优化使页面加载快"><span class="nav-number">9.</span> <span class="nav-text">前端开发的优化使页面加载快</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日常原生js的封装功能"><span class="nav-number">10.</span> <span class="nav-text">日常原生js的封装功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON与xml"><span class="nav-number">11.</span> <span class="nav-text">JSON与xml</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS-模块化开发"><span class="nav-number">12.</span> <span class="nav-text">JS 模块化开发</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+       
+    </div>
+     <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+          </iframe>
+      </div>
+
+
+        
+      </div>
+    </main>
+
+     <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong</span>
+</div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      
+      <i class="fa fa-user"></i>
+       访问用户：   
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+       访问次数： 
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/baidu_tools.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/canvasstar.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ARlzSxoq8r9WcclKV2oF2JOR-gzGzoHsz", "vCx22OzFXl5I9WOer8tCy7qq");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
+<script>
+ 'use strict';
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    var Circle = function () {
+       function Circle(x, y) {
+            _classCallCheck(this, Circle);
+
+            this.x = x;
+            this.y = y;
+            this.r = Math.random() * 10;
+            this._mx = Math.random();
+            this._my = Math.random();
+        }
+
+       _createClass(Circle, [{
+            key: 'drawCircle',
+            value: function drawCircle(ctx) {
+                ctx.beginPath();
+                //arc() 方法使用一个中心点和半径，为一个画布的当前子路径添加一条弧。
+                ctx.arc(this.x, this.y, this.r, 0, 360);
+                ctx.closePath();
+                ctx.fillStyle = 'rgba(204, 204, 204, 0.3)';
+                ctx.fill();
+            }
+        }, {
+            key: 'drawLine',
+            value: function drawLine(ctx, _circle) {
+                var dx = this.x - _circle.x;
+                var dy = this.y - _circle.y;
+                var d = Math.sqrt(dx * dx + dy * dy);
+                if (d < 150) {
+                    ctx.beginPath();
+
+                    ctx.moveTo(this.x, this.y); //起始点
+                    ctx.lineTo(_circle.x, _circle.y); //终点
+                    ctx.closePath();
+                    ctx.strokeStyle = 'rgba(204, 204, 204, 0.3)';
+                    ctx.stroke();
+                }
+            }
+
+
+        }, {
+            key: 'move',
+            value: function move(w, h) {
+                this._mx = this.x < w && this.x > 0 ? this._mx : -this._mx;
+                this._my = this.y < h && this.y > 0 ? this._my : -this._my;
+                this.x += this._mx / 2;
+                this.y += this._my / 2;
+            }
+        }]);
+
+        return Circle;
+    }();
+
+
+
+    var currentCirle = function (_Circle) {
+        _inherits(currentCirle, _Circle);
+
+        function currentCirle(x, y) {
+            _classCallCheck(this, currentCirle);
+
+            return _possibleConstructorReturn(this, (currentCirle.__proto__ || Object.getPrototypeOf(currentCirle)).call(this, x, y));
+        }
+
+        _createClass(currentCirle, [{
+            key: 'drawCircle',
+            value: function drawCircle(ctx) {
+                ctx.beginPath();
+
+                //this.r = (this.r < 14 && this.r > 1) ? this.r + (Math.random() * 2 - 1) : 2;
+                this.r = 8;
+                ctx.arc(this.x, this.y, this.r, 0, 360);
+                ctx.closePath();
+                //ctx.fillStyle = 'rgba(0,0,0,' + (parseInt(Math.random() * 100) / 100) + ')'
+                ctx.fillStyle = 'rgba(255, 77, 54, 0.6)';
+                ctx.fill();
+            }
+        }]);
+
+        return currentCirle;
+    }(Circle);
+
+
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var w = canvas.width = canvas.offsetWidth;
+    var h = canvas.height = canvas.offsetHeight;
+    var circles = [];
+    var current_circle = new currentCirle(0, 0);
+
+    var draw = function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (var i = 0; i < circles.length; i++) {
+            circles[i].move(w, h);
+            circles[i].drawCircle(ctx);
+            for (var j = i + 1; j < circles.length; j++) {
+                circles[i].drawLine(ctx, circles[j]);
+            }
+        }
+        if (current_circle.x) {
+            current_circle.drawCircle(ctx);
+            for (var k = 1; k < circles.length; k++) {
+                current_circle.drawLine(ctx, circles[k]);
+            }
+        }
+        requestAnimationFrame(draw);
+    };
+
+    var init = function init(num) {
+        for (var i = 0; i < num; i++) {
+            circles.push(new Circle(Math.random() * w, Math.random() * h));
+        }
+        draw();
+    };
+    window.addEventListener('load', init(60));
+    window.onmousemove = function (e) {
+        e = e || window.event;
+        current_circle.x = e.clientX;
+        current_circle.y = e.clientY;
+    };
+    window.onmouseout = function () {
+        current_circle.x = null;
+        current_circle.y = null;
+    };
+</script>
